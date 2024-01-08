@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "energy-data-api"
+version = "0.1.0"
+description = "Energy Data Python API"
+authors = ["ajaaliconsulting <info@ajaali.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "energy_data_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+gql = {extras = ["all"], version = "^3.5.0"}
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.4"
+coverage = "^7.4.0"
+ruff = "^0.1.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+target-version = "py311"
+src = ["energy_data_api", "tests"]
+include = ['*.py']
+fix = true
+line-length = 120
